@@ -18,6 +18,7 @@ module.exports = {
     }
   },
   options: {
-    files: 'test/**/*.js'
+    files: 'test/**/*.js',
+    timeout: 10000
   }
 };
