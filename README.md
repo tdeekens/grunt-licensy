@@ -2,7 +2,7 @@
 
 **Note: This grunt plugin is under current development and not ready for use just now!**
 
-> A grunt task to determine your project's licenses..
+> A grunt task to determine your project's licenses.
 
 [![NPM](https://nodei.co/npm/grunt-licensy.png?mini=true)](https://nodei.co/npm/grunt-licensy/)
 
@@ -38,7 +38,9 @@ Or add it to an existing task: `grunt.registerTask('test', ['clean', 'licensy'])
 ```javascript
 {
   //Save resulting information in this file
-  store: <'./dist/voguesy.json'>
+  store: <'./dist/voguesy.json'>,
+  //Directory for bower depdencies if not standard 'bower_components'
+  bowerDir: <false>
 }
 ```
 
