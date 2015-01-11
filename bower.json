@@ -1,0 +1,22 @@
+{
+  "name": "grunt-licensy",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tdeekens/grunt-licensy",
+  "authors": [
+    "tdeekens <tobias.deekens@epost-dev.de>"
+  ],
+  "description": "A grunt task to determine your project's licenses.",
+  "main": "./tasks/licensy.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
