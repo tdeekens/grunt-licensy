@@ -45,6 +45,7 @@ Or add it to an existing task: `grunt.registerTask('test', ['clean', 'licensy'])
 ```
 
 An example configuration can be found [here](https://github.com/tdeekens/grunt-licensy/blob/master/grunt/tasks/licensy.js) and if you want to check the options you might want to check the [Gruntfile](https://github.com/tdeekens/grunt-licensy/blob/master/tasks/licensy.js) itself.
+An example output on the other hand is [here](https://github.com/tdeekens/grunt-licensy/blob/master/dist/licensy.json).
 
 ## Developing & Contributing
 
