@@ -2,6 +2,8 @@
 module.exports = {
   options: {
     store: './dist/licensy.json',
-    bowerDir: './bower_modules'
+    bowerDir: './bower_modules',
+    blacklist: [],
+    warn: true
   }
 };

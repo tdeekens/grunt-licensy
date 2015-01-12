@@ -75,7 +75,7 @@
     "ISC": [
       "dezalgo@1.0.1",
       "glob@4.3.2",
-      "grunt-licensy@0.1.2",
+      "grunt-licensy@0.2.0",
       "inflight@1.0.4",
       "inherits@2.0.1",
       "read-installed@3.1.5",

@@ -21,7 +21,9 @@ module.exports = function(grunt) {
     var
       options = this.options({
         store: './dist/voguesy.json',
-        bowerDir: false
+        bowerDir: false,
+        warn: true,
+        blacklist: []
       }),
       bower = new Bower(options.bowerDir),
       npm = new Npm(options.tmpDir),
@@ -32,7 +34,19 @@ module.exports = function(grunt) {
 
     npm.get(function(npmLicenses) {
       bower.get(function(bowerLicsenses) {
-        persister.write(aggregator.get(_.merge(npmLicenses, bowerLicsenses)));
+        var _licenses = aggregator.get(_.merge(npmLicenses, bowerLicsenses));
+        var _withoutBlacklist = _.difference(_.keys(_licenses.licenses), options.blacklist);
+        var _isBlacklisted = _withoutBlacklist.length < _.keys(_licenses.licenses).length;
+
+        persister.write(_licenses);
+
+        if (_isBlacklisted) {
+          grunt.log.errorlns('The project uses a blacklisted licsense of either: ' + options.blacklist.join(' or '));
+
+          if (options.warn === false) {
+            grunt.fail.warn('...breaking build as a result thereof!');
+          }
+        }
 
         done();
       });
