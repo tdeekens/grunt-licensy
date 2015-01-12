@@ -13,7 +13,7 @@ var Aggregator = require('../../tasks/aggregator/index'),
 describe('Aggregator specification', function() {
   beforeEach(function() {
     aggregator = new Aggregator();
-    npm = new Npm();
+    npm = new Npm('./tasks/.tmp/');
     bower = new Bower('bower_modules');
 
     licenses = aggregator.get(_.merge(bower.get(), npm.get()));

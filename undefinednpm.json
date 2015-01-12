@@ -1,0 +1,14 @@
+{
+    "grunt-licensy@0.1.2": {
+        "licenses": "ISC",
+        "repository": "https://github.com/tdeekens/grunt-licensy"
+    },
+    "lodash@2.4.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/lodash/lodash"
+    },
+    "shelljs@0.3.0": {
+        "licenses": "BSD*",
+        "repository": "https://github.com/arturadib/shelljs"
+    }
+}
