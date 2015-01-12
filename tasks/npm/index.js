@@ -18,7 +18,7 @@ Npm.prototype.get = function(onComplete) {
     async: false
   });
 
-  _json = fs.readFileSync('./tasks/.tmp/npm.json');
+  _json = fs.readFileSync(this._tmpDir + 'npm.json');
   _json = JSON.parse(_json);
 
   return _json;
