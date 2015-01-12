@@ -12,7 +12,6 @@ function Bower(bowerDir) {
 
 Bower.prototype.get = function(onComplete) {
   var
-    _json = {},
     _symlinked = false;
 
   if (!fs.existsSync('./bower_components') && this._bowerDir) {
@@ -21,19 +20,16 @@ Bower.prototype.get = function(onComplete) {
   }
 
   if (fs.existsSync('./bower.json')) {
-    _json = shelljs.exec('./node_modules/bower-license/bin/bower-license -e json', {
-      silent: true,
-      async: false
-    }).output;
+    var _this = this;
 
-    _json = JSON.parse(_json);
+    licenses.init('.', function(json) {
+      onComplete(json);
+
+      if (_symlinked === true && _this._bowerDir) {
+        shelljs.exec('rm -rf bower_components');
+      }
+    });
   }
-
-  if (_symlinked === true && this._bowerDir) {
-    shelljs.exec('rm -rf bower_components');
-  }
-
-  return _json;
 };
 
 module.exports = Bower;

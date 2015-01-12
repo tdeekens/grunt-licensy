@@ -3,8 +3,8 @@
 var
   _ = require('lodash'),
   fs = require('fs'),
-  licenses = require('bower-license'),
-  shelljs = require('shelljs');
+  shelljs = require('shelljs'),
+  licenses = require('npm-license');
 
 function Npm(tmpDir) {
   this._tmpDir = tmpDir;
@@ -13,15 +13,14 @@ function Npm(tmpDir) {
 Npm.prototype.get = function(onComplete) {
   var _json = null;
 
-  shelljs.exec('./node_modules/npm-license/bin/npm-license --json ' + this._tmpDir + 'npm.json', {
-    silent: true,
-    async: false
+  licenses.init({
+    start: '.',
+    depth: 'all',
+    include: 'all',
+    meta: null
+  }, function(json) {
+    onComplete(json);
   });
-
-  _json = fs.readFileSync(this._tmpDir + 'npm.json');
-  _json = JSON.parse(_json);
-
-  return _json;
 };
 
 module.exports = Npm;

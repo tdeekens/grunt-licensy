@@ -21,21 +21,21 @@ module.exports = function(grunt) {
     var
       options = this.options({
         store: './dist/voguesy.json',
-        bowerDir: false,
-        tmpDir: './tasks/.tmp/'
+        bowerDir: false
       }),
       bower = new Bower(options.bowerDir),
       npm = new Npm(options.tmpDir),
       persister = new Persister(options.store),
       aggregator = new Aggregator();
 
-    var
-      _npm = npm.get(),
-      _bower = bower.get();
+    var done = this.async();
 
-    var
-      _merged = _.merge(_npm, _bower);
+    npm.get(function(npmLicenses) {
+      bower.get(function(bowerLicsenses) {
+        persister.write(aggregator.get(_.merge(npmLicenses, bowerLicsenses)));
 
-    persister.write(aggregator.get(_merged));
+        done();
+      });
+    });
   });
 };

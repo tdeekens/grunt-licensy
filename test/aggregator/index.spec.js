@@ -11,12 +11,17 @@ var Aggregator = require('../../tasks/aggregator/index'),
     licenses;
 
 describe('Aggregator specification', function() {
-  beforeEach(function() {
+  beforeEach(function(done) {
     aggregator = new Aggregator();
-    npm = new Npm('./tasks/.tmp/');
+    npm = new Npm();
     bower = new Bower('bower_modules');
 
-    licenses = aggregator.get(_.merge(bower.get(), npm.get()));
+    npm.get(function(_npm) {
+      bower.get(function(_bower) {
+        licenses = aggregator.get(_.merge(_npm, _bower));
+        done();
+      });
+    });
   });
 
   it('it aggregates licenses and their sums', function() {

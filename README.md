@@ -41,8 +41,6 @@ Or add it to an existing task: `grunt.registerTask('test', ['clean', 'licensy'])
   store: <'./dist/voguesy.json'>,
   //Directory for bower depdencies if not standard 'bower_components'
   bowerDir: <false>
-  //Directory to store intermediate files
-  tmpDir: <'./tasks/.tmp/'>
 }
 ```
 
@@ -58,3 +56,4 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 - 0.1.0 Initial release
 - 0.1.1 Add options for tmp directory
 - 0.1.2 Fix tmp dir and peerDependencies
+- 0.1.3 Change dep gathering via shell cmd to node api

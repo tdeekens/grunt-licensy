@@ -11,10 +11,10 @@ describe('Bower dependency fetcher specification', function() {
   });
 
   it('it gets and parses licenses of bower packages', function() {
-    var _bower = bower.get();
-
-    expect(_bower['jquery@2.1.3']).is.an.object;
-    expect(_bower['jquery@2.1.3'].licenses).to.be.an.array;
-    expect(_bower['jquery@2.1.3'].licenses).to.contain('MIT');
+    var _bower = bower.get(function(_bower) {
+      expect(_bower['jquery@2.1.3']).is.an.object;
+      expect(_bower['jquery@2.1.3'].licenses).to.be.an.array;
+      expect(_bower['jquery@2.1.3'].licenses).to.contain('MIT');
+    });
   });
 });
