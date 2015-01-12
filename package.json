@@ -25,9 +25,7 @@
   },
   "homepage": "https://github.com/tdeekens/grunt-licensy",
   "dependencies": {
-    "bower-license": "^0.2.4",
     "lodash": "^2.4.1",
-    "npm-license": "^0.2.3",
     "shelljs": "^0.3.0"
   },
   "devDependencies": {
@@ -44,7 +42,9 @@
   },
   "peerDependencies": {
     "grunt": "~0.4.2",
-    "grunt-cli": "~0.1.1"
+    "grunt-cli": "~0.1.1",
+    "bower-license": "^0.2.4",
+    "npm-license": "^0.2.3"
   },
   "config": {
     "blanket": {
