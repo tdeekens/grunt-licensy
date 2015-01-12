@@ -7,7 +7,7 @@ var Npm = require('../../tasks/npm/index'),
 
 describe('Npm dependency fetcher specification', function() {
   beforeEach(function() {
-    npm = new Npm();
+    npm = new Npm('./tasks/.tmp/');
   });
 
   it('it gets and parses licenses of npm packages', function() {

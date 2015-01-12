@@ -21,10 +21,11 @@ module.exports = function(grunt) {
     var
       options = this.options({
         store: './dist/voguesy.json',
-        bowerDir: false
+        bowerDir: false,
+        tmpDir: './tasks/.tmp/'
       }),
       bower = new Bower(options.bowerDir),
-      npm = new Npm(),
+      npm = new Npm(options.tmpDir),
       persister = new Persister(options.store),
       aggregator = new Aggregator();
 

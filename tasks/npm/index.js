@@ -6,13 +6,14 @@ var
   licenses = require('bower-license'),
   shelljs = require('shelljs');
 
-function Npm() {
+function Npm(tmpDir) {
+  this._tmpDir = tmpDir;
 }
 
 Npm.prototype.get = function(onComplete) {
   var _json = null;
 
-  shelljs.exec('./node_modules/npm-license/bin/npm-license --json ./tasks/.tmp/npm.json', {
+  shelljs.exec('./node_modules/npm-license/bin/npm-license --json ' + this._tmpDir + 'npm.json', {
     silent: true,
     async: false
   });
