@@ -1,6 +1,6 @@
 {
   "name": "grunt-licensy",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A grunt task to determine your project's licenses.",
   "scripts": {
     "test": "grunt ci-test"
