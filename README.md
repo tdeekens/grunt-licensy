@@ -43,7 +43,7 @@ Or add it to an existing task: `grunt.registerTask('test', ['clean', 'licensy'])
   bowerDir: <false>,
   //Blacklisted licenses which result in a warning or breaking build
   blacklist: <[]>,
-  //Only warn when a blacklisted license is used - if false grunt fails 
+  //Only warn when a blacklisted license is used - if false grunt fails
   warn: <true>
 }
 ```
@@ -61,4 +61,5 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 - 0.1.1 Add options for tmp directory
 - 0.1.2 Fix tmp dir and peerDependencies
 - 0.1.3 Change dep gathering via shell cmd to node api
-- 0.2.0 Add support for breaking when using a specified blacklisted licsense
+- 0.2.0 Add support for breaking when using a specified blacklisted license
+- 0.2.1 Remove duplicate packages from results (comes from nesting)

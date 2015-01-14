@@ -18,7 +18,7 @@ Aggregator.prototype.get = function(packages) {
 
     _.each(_licenses, function(license) {
       _output.licenses[license] = _output.licenses[license] || 0;
-      _output.packages[license] = _output.packages[license] || [];
+      _output.packages[license] = _.uniq(_output.packages[license], true) || [];
 
       _output.packages[license].push(packageName);
       _output.licenses[license]++;

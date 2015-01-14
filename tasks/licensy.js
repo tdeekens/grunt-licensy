@@ -34,6 +34,7 @@ module.exports = function(grunt) {
 
     npm.get(function(npmLicenses) {
       bower.get(function(bowerLicsenses) {
+        console.log(bowerLicsenses)
         var _licenses = aggregator.get(_.merge(npmLicenses, bowerLicsenses));
         var _withoutBlacklist = _.difference(_.keys(_licenses.licenses), options.blacklist);
         var _isBlacklisted = _withoutBlacklist.length < _.keys(_licenses.licenses).length;
