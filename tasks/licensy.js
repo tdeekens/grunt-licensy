@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     //Grunt related initialization
     var
       options = this.options({
-        store: './dist/voguesy.json',
+        store: './dist/licensy.json',
         bowerDir: false,
         warn: true,
         blacklist: []

@@ -17,7 +17,8 @@ Persister.prototype.persist = function(stats) {
 Persister.prototype.write = function(data) {
   var json = JSON.stringify(data, null, 2);
 
-  fs.writeFileSync(this._location, json);
+  fs.openSync(this._location, 'w');
+  fs.writeFileSync(this._location, json, 'UTF-8');
 
   return data;
 };

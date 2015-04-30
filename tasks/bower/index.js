@@ -29,6 +29,8 @@ Bower.prototype.get = function(onComplete) {
         shelljs.exec('rm -rf bower_components');
       }
     });
+  } else {
+    onComplete({});
   }
 };
 
