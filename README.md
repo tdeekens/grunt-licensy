@@ -65,3 +65,5 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 - 0.2.2 Remove duplicate packages from results (comes from nesting)
 - 0.3.0 Fix not having `bower`-components and create licensy.json if not present
 - 0.3.1 Change default `licensy.json` location
+- 0.4.0 Add support for aggregating unknown licensed packages
+- 0.4.1 Add handling of previously unknown licensed packages

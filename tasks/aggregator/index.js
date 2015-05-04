@@ -10,7 +10,7 @@ function Aggregator() {
 _processUnknown = function(licenses) {
   return _.map(licenses, function(license) {
     return (
-      license === null || license === undefined ?
+      license === null || license === undefined || license === 'UNKNOWN' ?
         'Unknown' : license
     );
   });
