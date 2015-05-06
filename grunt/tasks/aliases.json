@@ -8,7 +8,8 @@
     "mochacov:spec"
   ],
   "ci-test": [
-    "test",
+    "jshint",
+    "mochacov:spec",
     "mochacov:ci"
   ],
   "dev": [
