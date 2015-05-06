@@ -32,6 +32,6 @@ describe('Aggregator specification', function() {
   it('it aggregates licenses and their packages', function() {
     expect(licenses.packages).to.be.an.object;
     expect(licenses.packages.MIT).to.be.an.array;
-    expect(licenses.packages.MIT).to.contain('jquery@2.1.3');
+    expect(licenses.packages.MIT).to.contain('jquery@2.1.4');
   });
 });
