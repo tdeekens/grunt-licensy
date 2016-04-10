@@ -67,3 +67,4 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 - 0.3.1 Change default `licensy.json` location
 - 0.4.0 Add support for aggregating unknown licensed packages
 - 0.4.1 Add handling of previously unknown licensed packages
+- 1.0.0 Update dependencies and add engine requirements
